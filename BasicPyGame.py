@@ -12,9 +12,9 @@ def start():
     print("The objective of this game is to collect apples.")
     print("After collecting the apples you sell them.")
     choice = raw_input("Do you want to play Y/N?")
-    if choice == "Y":
+    if choice == "Y" or "y":
           begin()
-    elif choice == "N":
+    elif choice == "N" or "n":
         print "Okay, bye..."
         exit()
     else:
@@ -36,7 +36,7 @@ def begin():
         begin()
     elif pick == "N":
         sell = raw_input("Do you want to sell your apples? Y/N")
-        if sell == "Y":
+        if sell == "Y" or "y":
             if int(apples) < 1:
                 print("Sorry, " +name+ " . You have no apples to sell.")
             elif int(apples)==1:
@@ -48,7 +48,7 @@ def begin():
                 print("You've sold your apples.")
                 gold = apples*10
             apples = 0
-        elif sell == "N":
+        elif sell == "N" or "n":
             print("Okay, have fun with your apple.")
         else:
             print("Should have followed my instructions. Have fun at the beginning!")

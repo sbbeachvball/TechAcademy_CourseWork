@@ -76,7 +76,7 @@ class Game:
                 
         if self.apples < 1:
             print("Sorry, " +self.name+ " . You have no apples to sell.")
-            
+
         self.gold += toSell*10
         self.apples -= toSell
         # use our own pluralize function to pluralize, so we dont have to check 

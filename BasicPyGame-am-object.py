@@ -67,7 +67,8 @@ class Game:
     def sellApples(self):
         self.printInventory()
         # reworked this to prompt user for how many apples to sell!!
-        # notice that asside from doing the regex, that the logic is simpler
+        # notice that asside from doing the regex, the logic is simpler
+        # and by using pluralize function, we dont need to do that extra check
         toSell = self.askHowManyApplesToSell()
         if toSell > self.apples:
             print "You don't have that many apples, but we can sell all you have!"
@@ -76,7 +77,6 @@ class Game:
         if self.apples < 1:
             print("Sorry, " +self.name+ " . You have no apples to sell.")
             
-        suff= '' if toSell == 1 else 's'
         self.gold += toSell*10
         self.apples -= toSell
         # use our own pluralize function to pluralize, so we dont have to check 
@@ -87,7 +87,7 @@ class Game:
         #    print("You've sold your apples.")
         #    self.gold += self.apples*10
         #self.apples = 0
-        self.printInventory()
+        self.printInventory()   # print the now updated inventory
     
     def quit(self):
         self.bye("Okay, we are quitting by request.")  # call bye, but change message
